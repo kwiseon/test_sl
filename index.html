@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>SuperLawyer – 포인트 신청하기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="page-container">
+    <div class="header">
+      <div class="badge">LTAS 기념 특별 이벤트</div>
+      <h1>슈퍼로이어 포인트 신청하기</h1>
+      <p class="subtitle">회원님을 위한 특별 포인트 이벤트에 참여하세요.</p>
+    </div>
+
+    <div class="content-container">
+      <div class="event-info">
+        <h2>이벤트 안내</h2>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 2V6" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 2V6" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 10H21" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="info-content">
+            <div class="info-title">이벤트 기간</div>
+            <div class="info-desc">2025년 6월 18일(수) ~ 20일(금)</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="info-content">
+            <div class="info-title">제공 포인트</div>
+            <div class="info-desc">슈퍼로이어 50,000p</div>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 6V12L16 14" stroke="#9D6CED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="info-content">
+            <div class="info-title">포인트 지급</div>
+            <div class="info-desc">6월 말 일괄 지급</div>
+          </div>
+        </div>
+        
+        <div class="instruction-box">
+          <div class="instruction-title">참여 방법</div>
+          <ol>
+            <li>오른쪽 신청 양식을 작성해주세요.</li>
+            <li>이벤트 기간 내 신청한 회원에 한해 포인트가 지급됩니다.</li>
+            <li>한 회원당 1회만 신청 가능합니다.</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="form-container">
+        <h2>포인트 신청 양식</h2>
+        <p class="form-subtitle">모든 정보를 정확하게 입력해 주세요.</p>
+        
+        <form id="event-form">
+          <div class="form-group">
+            <label for="name">이름 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="홍길동" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="userid">슈퍼로이어 아이디 <span class="required">*</span></label>
+            <input type="text" id="userid" name="userid" placeholder="아이디는 이메일 형태입니다." required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">핸드폰번호 <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+          </div>
+          
+          <div class="checkbox-group">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree" class="agree-label">개인정보 수집 및 이용에 동의합니다. <span class="required">*</span></label>
+            <p class="privacy-notice">입력하신 정보는 포인트 지급 목적으로만 사용되며, 이벤트 종료 후 파기됩니다.</p>
+          </div>
+          
+          <button type="submit">제출하기</button>
+          <input type="hidden" name="timestamp" id="timestamp">
+        </form>
+        
+        <div class="message" id="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
