@@ -73,35 +73,32 @@
       
       <div class="form-container">
         <h2>포인트 신청 양식</h2>
-        <p class="form-subtitle">모든 정보를 정확하게 입력해 주세요.</p>
-        
-        <form id="event-form">
-          <div class="form-group">
-            <label for="name">이름 <span class="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="홍길동" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="userid">슈퍼로이어 아이디 <span class="required">*</span></label>
-            <input type="text" id="userid" name="userid" placeholder="아이디는 이메일 형태입니다." required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">핸드폰번호 <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-          </div>
-          
-          <div class="checkbox-group">
-            <input type="checkbox" id="agree" name="agree" required>
-            <label for="agree" class="agree-label">개인정보 수집 및 이용에 동의합니다. <span class="required">*</span></label>
-            <p class="privacy-notice">입력하신 정보는 포인트 지급 목적으로만 사용되며, 이벤트 종료 후 파기됩니다.</p>
-          </div>
-          
-          <button type="submit">제출하기</button>
-          <input type="hidden" name="timestamp" id="timestamp">
-        </form>
-        
-        <div class="message" id="message"></div>
+        <div class="form-wrapper">
+          <form id="pointForm" action="https://script.google.com/a/macros/lawcompany.co.kr/s/AKfycbyC8fHG-PRIvh135y7LSPISKE28DtZBHWkDarWbaA1qLhrEY5Bb8Sc35U1FINZaxrwg/exec" method="post">
+            <div class="form-group">
+              <label for="name">이름 <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="userid">슈퍼로이어 아이디 <span class="required">*</span></label>
+              <input type="text" id="userid" name="userid" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">핸드폰번호 <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="agree" name="agree" value="네. 동의합니다" required>
+              <label for="agree" class="agree-label">개인정보 수집 및 이용에 동의합니다. <span class="required">*</span></label>
+            </div>
+            
+            <button type="submit">제출하기</button>
+          </form>
+          <div id="message" class="message" style="display: none;"></div>
+        </div>
       </div>
     </div>
   </div>
