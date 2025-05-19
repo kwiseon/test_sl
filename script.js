@@ -183,14 +183,31 @@ document.addEventListener('DOMContentLoaded', function() {
       messageElement.style.display = 'block';
       
       try {
-        // Get form data
+        // 방법 1: FormData로 전송
         const formData = new FormData(form);
         
-        // Submit the form
+        // 방법 2: URL 파라미터로 전송 (백업 방식)
+        const params = new URLSearchParams();
+        params.append('name', name);
+        params.append('userid', userid);
+        params.append('phone', phone);
+        params.append('agree', agree);
+        
+        // 이미지 방식으로도 전송 (CORS 우회)
+        const img = new Image();
+        img.src = `${form.action}?${params.toString()}`;
+        
+        // POST 요청 전송
         const response = await fetch(form.action, {
           method: 'POST',
           body: formData,
-          mode: 'no-cors' // This is needed for cross-origin requests
+          mode: 'no-cors'
+        });
+        
+        // GET 요청도 백업으로 전송
+        fetch(`${form.action}?${params.toString()}`, {
+          method: 'GET',
+          mode: 'no-cors'
         });
         
         // Show success message
